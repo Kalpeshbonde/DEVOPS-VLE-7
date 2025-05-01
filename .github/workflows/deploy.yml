@@ -1,9 +1,9 @@
-name: CI/CD Pipeline Docker Build
+name: Jenkins CI/CD Pipeline
 
 on:
   push:
     branches:
-      - main  # Trigger this pipeline on pushes to the main branch.
+      - main
 
 jobs:
   build:
@@ -13,37 +13,33 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      - name: Docker Build
+      - name: Simulate Docker Build
         run: |
-          echo "Starting Docker build..."
-          sleep 2
-          echo "Error: Docker build failed due to missing dependencies!"
-          exit 1  # Simulating Docker build failure
+          echo "Simulating Docker build..."
+          sleep 2  # Simulate build time
+          echo "Docker image built successfully!"
 
-      - name: Run Tests
+      - name: Simulate Testing
         run: |
-          echo "Running tests..."
-          sleep 2
-          echo "Error: Test failure detected in unit tests!"
-          exit 1  # Simulating test failure
+          echo "Running fake tests..."
+          sleep 2  # Simulate test time
+          echo "Tests passed successfully!"
 
-      - name: Push Docker Image
+      - name: Simulate Docker Push
         run: |
-          echo "Pushing Docker image to DockerHub..."
-          sleep 2
-          echo "Error: Docker push failed due to authentication issue!"
-          exit 1  # Simulating push failure
+          echo "Simulating Docker push to DockerHub..."
+          sleep 2  # Simulate push
+          echo "Docker image pushed successfully!"
 
-      - name: Deploy to Kubernetes
+      - name: Simulate Kubernetes Deployment
         run: |
-          echo "Deploying to Kubernetes..."
-          sleep 2
-          echo "Error: Deployment failed due to invalid Kubernetes configuration!"
-          exit 1  # Simulating deployment failure
+          echo "Simulating deployment to Kubernetes..."
+          sleep 2  # Simulate deployment
+          echo "Deployment to Kubernetes successful!"
 
-      - name: Switch Traffic to Green
+      - name: Simulate Traffic Switch (Blue-Green)
         run: |
-          echo "Switching traffic to green environment..."
-          sleep 2
-          echo "Error: Traffic switch failed due to missing Kubernetes service selector!"
-          exit 1  # Simulating traffic switch failure
+          echo "Simulating traffic switch to green environment..."
+          sleep 2  # Simulate switching traffic
+          echo "Traffic switched to green environment successfully!"
+
