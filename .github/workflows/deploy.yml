@@ -1,4 +1,4 @@
-name: Fake CI/CD Pipeline
+name: Jenkins /CI/CD Pipeline
 
 on:
   push:
