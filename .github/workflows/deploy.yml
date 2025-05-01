@@ -1,0 +1,45 @@
+name: Fake CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Simulate Docker Build
+        run: |
+          echo "Simulating Docker build..."
+          sleep 2  # Simulate build time
+          echo "Docker image built successfully!"
+
+      - name: Simulate Testing
+        run: |
+          echo "Running fake tests..."
+          sleep 2  # Simulate test time
+          echo "Tests passed successfully!"
+
+      - name: Simulate Docker Push
+        run: |
+          echo "Simulating Docker push to DockerHub..."
+          sleep 2  # Simulate push
+          echo "Docker image pushed successfully!"
+
+      - name: Simulate Kubernetes Deployment
+        run: |
+          echo "Simulating deployment to Kubernetes..."
+          sleep 2  # Simulate deployment
+          echo "Deployment to Kubernetes successful!"
+
+      - name: Simulate Traffic Switch (Blue-Green)
+        run: |
+          echo "Simulating traffic switch to green environment..."
+          sleep 2  # Simulate switching traffic
+          echo "Traffic switched to green environment successfully!"
+
